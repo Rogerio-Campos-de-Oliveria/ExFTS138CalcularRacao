@@ -86,6 +86,7 @@ public class CalculadoraRacaoTestPositivo {
 
     }
 
+
         @DataProvider(name = "dadosCSV") // Feito com ajuda do chatGBT
         public Object[][] lerDadosCSV() throws IOException {
             String caminhoArquivo = "C:\\Users\\pirul\\IdeaProjects\\CalcularRacao\\Dados Teste";
