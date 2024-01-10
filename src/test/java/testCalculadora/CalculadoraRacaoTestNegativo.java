@@ -7,8 +7,6 @@ import org.testng.annotations.Test;
 
 public class CalculadoraRacaoTestNegativo {
     
-
-
     @Test
     public void testCacularRacaoNegativo_P (){
         // Configura
