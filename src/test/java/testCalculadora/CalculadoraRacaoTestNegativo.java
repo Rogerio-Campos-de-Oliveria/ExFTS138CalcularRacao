@@ -56,4 +56,30 @@ public class CalculadoraRacaoTestNegativo {
 
     }
 
+
+    @DataProvider(name = "testCalcular")
+    public Object[][] testCalcular(){
+        return new Object[][]{
+                {'P', 20, 201},
+                {'X', 10, 201},
+                {'M', 200, 2001},
+                {'G', 40, 150},
+                {'P', 15, 201}
+        };
+    }
+
+
+    @Test(dataProvider = "testCalcular")
+    public void testCacularDDT(char num1, double num2, double resultadoEsperado){
+        // Configura
+
+        // Excecuta
+        double resultadoAtual = CalculadoraRacao.calcularRacao(num1, num2);
+
+        // Valida
+        Assert.assertEquals(resultadoAtual, resultadoEsperado);
+
+    }
+
+
 }

@@ -5,37 +5,16 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class CalculadoraRacaoTestPositivo {
-
-    @DataProvider(name = "testCalcular")
-    public Object[][] testCalcular(){
-            return new Object[][]{
-                    {'P', 20, 201},
-                    {'X', 10, 201},
-                    {'M', 200, 2001},
-                    {'G', 40, 150},
-                    {'P', 15, 201}
-            };
-        }
-
-
-        @Test(dataProvider = "testCalcular")
-        public void testCacularDDT(char num1, double num2, double resultadoEsperado){
-            // Configura
-
-            // Excecuta
-            double resultadoAtual = CalculadoraRacao.calcularRacao(num1, num2);
-
-            // Valida
-            Assert.assertEquals(resultadoAtual, resultadoEsperado);
-
-        }
 
 
     @Test
@@ -89,7 +68,7 @@ public class CalculadoraRacaoTestPositivo {
 
         @DataProvider(name = "dadosCSV") // Feito com ajuda do chatGBT
         public Object[][] lerDadosCSV() throws IOException {
-            String caminhoArquivo = "C:\\Users\\pirul\\IdeaProjects\\CalcularRacao\\Dados Teste";
+            String caminhoArquivo = "C:\\Users\\pirul\\IdeaProjects\\CalcularRacao\\Dados Teste\\Dados.csv";
             BufferedReader reader = new BufferedReader(new FileReader(caminhoArquivo));
 
             List<Object[]> linhas = new ArrayList<>();
@@ -114,4 +93,7 @@ public class CalculadoraRacaoTestPositivo {
             Assert.assertEquals(resultadoAtual, resultadoEsperado);
         }
 
+
 }
+
+
